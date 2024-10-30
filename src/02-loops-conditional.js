@@ -9,9 +9,16 @@
  * const anotherResult = isEven(7); // anotherResult will be false
  */
 
-function isEven(number) {
-
+function isEven (number) {
+    // if number / 2 has a remainder of 0
+    const numberIsEven = number % 2 === 0;
+    if (numberIsEven) {
+        return true;
+    } else {
+        return false;
+    }
 }
+console.log(isEven(4))
 
 /**
  * This function checks if a number is within a range.
@@ -27,8 +34,13 @@ function isEven(number) {
  */
 
 function isWithinRange(n, min, max) {
-
+    if (n >= min && n <= max) {
+        return true;
+    } if (n < min || n > max) {
+        return false;
+    }
 }
+console.log(isWithinRange(5, 1, 20))
 
 /**
  * This function checks if a string contains the string "ba"
@@ -43,9 +55,14 @@ function isWithinRange(n, min, max) {
  */
 
 function stringContainsBa(string) {
-
+    const baString = "Ba"
+    const lowerCaseBa = baString.toLowerCase()
+    if (string.includes(lowerCaseBa)) {
+        return true;
+    } else {
+        return false;
+    }
 }
-
 
 /**
  * This function calculates the sum of each digit raised to its position.

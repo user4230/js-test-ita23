@@ -8,10 +8,12 @@
  * // person might be { name: 'John Doe', age: 30, city: 'New York' }
  */
 function createPersonObject() {
-
+    return {
+        name: "",
+        age: 0,
+        city: ""
+    }
 }
-
-
 /**
  * This function returns the name of the given person object.
  *
@@ -23,7 +25,7 @@ function createPersonObject() {
  * // personName will be 'John Doe'
  */
 function getPersonName(person) {
-
+    return person.name
 }
 
 
@@ -40,7 +42,7 @@ function getPersonName(person) {
  *
  */
 function findPersonByName(persons, name) {
-
+    const nameOfPerson = "";
 }
 
 

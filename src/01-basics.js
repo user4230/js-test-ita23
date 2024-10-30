@@ -8,8 +8,10 @@
  * console.log(coolestTeacher); // Benjamin
  */
 function getCoolestTeacher() {
-    
+    return "Benjamin"
 }
+const coolestTeacher = getCoolestTeacher()
+
 
 /**
  * This function multiplies two numbers and then adds a third number.
@@ -24,7 +26,7 @@ function getCoolestTeacher() {
  * const anotherResult = multiplyAndAdd(-1, 1, 2); // anotherResult will be 1
  */
 function multiplyAndAdd(a, b, c) {
-
+    return (a * b) + c
 }
 
 /**
@@ -38,7 +40,7 @@ function multiplyAndAdd(a, b, c) {
  * const anotherResult = determineType(42); // anotherResult will be "number"
  */
 function determineType(value) {
-
+    return typeof (value)
 }
 
 /**
@@ -53,7 +55,7 @@ function determineType(value) {
  */
 
 function concatenateStringsWithSpace(a, b) {
-
+    return a + " " + b
 }
 
 
@@ -71,7 +73,7 @@ function concatenateStringsWithSpace(a, b) {
  */
 
 function toUpperCaseWithSmiley(str) {
-
+    return str.toUpperCase() + ":)"
 }
 
 /**
@@ -86,6 +88,15 @@ function toUpperCaseWithSmiley(str) {
  * const anotherRepeated = repeatString("Goodbye", 2); // anotherRepeated will be "Goodbye Goodbye"
  */
 function repeatString(str, times) {
-
+    const stringAndSpace = str + " ";
+    const emptyString = "";
+    if (times <= 0) {
+        return ""
+    } if (str === "") {
+        return emptyString.repeat(times).replace(/\s*$/,'');
+    }
+    // .replace taken from https://stackoverflow.com/questions/11306008/javascript-and-regex-remove-space-after-the-last-word-in-a-string
+    return stringAndSpace.repeat(times).replace(/\s*$/,'');
 }
+console.log(repeatString("Hey", 5))
 

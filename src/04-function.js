@@ -9,7 +9,7 @@
  * const message = generateMessage("Jack", 25); // "Hey Jack, happy 25 birthday!"
  */
 function generateMessage(name, age) {
-
+    return `Hey ${name}, happy ${age} birthday!`
 }
 
 /**
@@ -22,8 +22,13 @@ function generateMessage(name, age) {
  * const title = titleCase("hello world"); // title will be "Hello World"
  */
 function titleCase(sentence) {
-
+    const sentenceArray = sentence.split(" ")
+    for (let i = 0; i < sentenceArray.length; i++) {
+        sentenceArray[i] = sentenceArray[i][0].toUpperCase() + sentenceArray[i].substring(1)
+    }
+    sentenceArray.join(" ")
 }
+console.log(titleCase("Hello helllo hellllllo hello"))
 
 /**
  * This function returns the sum of a range of numbers in an array.
@@ -51,6 +56,8 @@ function sumOfRange(start, end) {
  * const anotherAcronym = generateAcronym("Federal Bureau Investigation"); // anotherAcronym will be "FBI"
  */
 function generateAcronym(sentence) {
+    // https://stackoverflow.com/questions/6145218/acronym-generator-in-javascript-it-only-grabs-the-first-letter-of-the-first-wor
+    return sentence.match(/\b(\w)/g).join("").toUpperCase()
 
 }
 
@@ -66,5 +73,6 @@ function generateAcronym(sentence) {
  * const anotherCount = countConsonantsWeighted("JavaScript"); // anotherCount will be 9
  */
 function countConsonantsWeighted(str) {
-
+    const numUpperConsonants = (str.match(/[A-Z]/g) || []).length;
 }
+console.log(countConsonantsWeighted("Hello my name is Nick"))
